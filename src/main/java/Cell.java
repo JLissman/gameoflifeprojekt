@@ -7,7 +7,7 @@ public class Cell {
     }
 
     public CellState GetNextState(int i) {
-        return CellState.DEAD;
+        return i > 1 ? CellState.ALIVE : CellState.DEAD;
     }
 
 
