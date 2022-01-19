@@ -33,4 +33,21 @@ public class CellTest {
         assertEquals(Cell.CellState.ALIVE, actual);
     }
 
+    @Test
+    public void IfThreeNeighborsThisLivesOn() {
+        Cell cell = new Cell(Cell.CellState.ALIVE);
+
+        Cell.CellState actual = cell.GetNextState(3);
+
+        assertEquals(Cell.CellState.ALIVE, actual);
+    }
+    @Test
+    public void IfFourNeighborsThisDies() {
+        Cell cell = new Cell(Cell.CellState.ALIVE);
+
+        Cell.CellState actual = cell.GetNextState(4);
+
+        assertEquals(Cell.CellState.DEAD, actual);
+    }
+
 }
