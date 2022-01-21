@@ -40,10 +40,11 @@ public class CellTest {
     }
 
     @Test
-    public void returnCellState(){
-        Cell cell = new Cell(Cell.CellState.ALIVE);
+    @Parameters({"ALIVE", "DEAD"})
+    public void returnCellState(String initValue){
+        Cell cell = new Cell(Cell.CellState.valueOf(initValue));
 
-        assertEquals(Cell.CellState.ALIVE, cell.getState());
+        assertEquals(Cell.CellState.valueOf(initValue), cell.getState());
 
     }
 
