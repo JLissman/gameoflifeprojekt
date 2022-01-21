@@ -72,7 +72,7 @@ public class Simulation {
             if(state[rad][kolumn+1] == Cell.CellState.ALIVE) aliveNeighbors++;
 
         }
-        System.out.println("DEBUG - rad:"+rad+" kolumn:"+kolumn+" state:"+ this.state[rad][kolumn].getState() +" levande:"+aliveNeighbors);
-         return aliveNeighbors;
+        //System.out.println("DEBUG - rad:"+rad+" kolumn:"+kolumn+" state:"+ this.state[rad][kolumn].getState() +" levande:"+aliveNeighbors);
+        return aliveNeighbors;
     }
 }
