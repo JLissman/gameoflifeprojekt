@@ -30,6 +30,12 @@ public class Simulation {
     }
 
     public void update() {
-        state[0][0].setState(state[0][0].getNextState(0));
+        for (int rad = 0; rad < state.length; rad++) {
+            for (int kolumn = 0; kolumn < state[rad].length; kolumn++) {
+                //neighbors = state[rad][kolumn].
+                state[rad][kolumn].setState(state[rad][kolumn].getNextState(0));
+
+            }
+        }
     }
 }
