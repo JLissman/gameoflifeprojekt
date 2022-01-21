@@ -32,10 +32,14 @@ public class Simulation {
     public void update() {
         for (int rad = 0; rad < state.length; rad++) {
             for (int kolumn = 0; kolumn < state[rad].length; kolumn++) {
-                //neighbors = state[rad][kolumn].
-                state[rad][kolumn].setState(state[rad][kolumn].getNextState(0));
+                int aliveNeighbors = getNumberOfAliveNeighbors();
+                state[rad][kolumn].setState(state[rad][kolumn].getNextState(aliveNeighbors));
 
             }
         }
+    }
+
+    private int getNumberOfAliveNeighbors() {
+        return 0;
     }
 }
