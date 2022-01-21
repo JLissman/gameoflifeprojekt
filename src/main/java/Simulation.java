@@ -18,6 +18,14 @@ public class Simulation {
     }
 
     public Cell.CellState[][] getState(){
-        return null;
+        Cell.CellState[][] cellStates = new Cell.CellState[state.length][];
+        for (int rad = 0; rad < state.length; rad++) {
+            cellStates[rad] = new Cell.CellState[state[rad].length];
+            for (int kolumn = 0; kolumn < state[rad].length; kolumn++) {
+                cellStates[rad][kolumn] = state[rad][kolumn].GetState();
+                
+            }
+        }
+        return cellStates;
     }
 }
