@@ -40,14 +40,14 @@ public class SimulationTest {
         Simulation sim = new Simulation(new Cell.CellState[][]{
                 {Cell.CellState.ALIVE, Cell.CellState.ALIVE, Cell.CellState.DEAD},
                 {Cell.CellState.ALIVE, Cell.CellState.DEAD, Cell.CellState.DEAD},
-                {Cell.CellState.DEAD, Cell.CellState.ALIVE, Cell.CellState.ALIVE}
+                {Cell.CellState.ALIVE, Cell.CellState.ALIVE, Cell.CellState.ALIVE}
 
         });
 
         Cell.CellState[][] expectedValue = new Cell.CellState[][]{
-                {Cell.CellState.DEAD, Cell.CellState.DEAD, Cell.CellState.DEAD},
-                {Cell.CellState.DEAD, Cell.CellState.DEAD, Cell.CellState.DEAD},
-                {Cell.CellState.DEAD, Cell.CellState.DEAD, Cell.CellState.DEAD}
+                {Cell.CellState.ALIVE, Cell.CellState.ALIVE, Cell.CellState.DEAD},
+                {Cell.CellState.DEAD, Cell.CellState.DEAD, Cell.CellState.ALIVE},
+                {Cell.CellState.ALIVE, Cell.CellState.ALIVE, Cell.CellState.DEAD}
 
         };
         sim.update();

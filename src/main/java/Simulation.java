@@ -30,16 +30,49 @@ public class Simulation {
     }
 
     public void update() {
+        Cell.CellState[][] copyofStates = getState();
         for (int rad = 0; rad < state.length; rad++) {
             for (int kolumn = 0; kolumn < state[rad].length; kolumn++) {
-                int aliveNeighbors = getNumberOfAliveNeighbors();
+                int aliveNeighbors = getNumberOfAliveNeighbors(copyofStates, rad, kolumn);
                 state[rad][kolumn].setState(state[rad][kolumn].getNextState(aliveNeighbors));
 
             }
         }
     }
 
-    private int getNumberOfAliveNeighbors() {
-        return 0;
+    private int getNumberOfAliveNeighbors(Cell.CellState[][] state, int rad, int kolumn) {
+
+        int aliveNeighbors = 0;
+         if (rad > 0){
+            int radOver = rad - 1;
+            if (kolumn > 0){
+
+                if(state[radOver][kolumn - 1] == Cell.CellState.ALIVE) aliveNeighbors++;
+            }
+            if(state[radOver][kolumn] == Cell.CellState.ALIVE) aliveNeighbors++;
+            if(kolumn < state[rad].length - 1){
+                if(state[radOver][kolumn + 1] == Cell.CellState.ALIVE)aliveNeighbors++;
+            }
+        }
+        if (rad < state.length - 1){
+            int radUnder = rad + 1;
+            if (kolumn > 0){
+                if(state[radUnder][kolumn -1] == Cell.CellState.ALIVE) aliveNeighbors++;
+            }
+            if(state[radUnder][kolumn] == Cell.CellState.ALIVE) aliveNeighbors++;
+            if(kolumn < state[rad].length - 1){
+                if(state[radUnder][kolumn + 1] == Cell.CellState.ALIVE)aliveNeighbors++;
+            }
+        }
+
+        if(kolumn > 0){
+            if(state[rad][kolumn-1] == Cell.CellState.ALIVE) aliveNeighbors++;
+        }
+        if(kolumn < state[rad].length -1){
+            if(state[rad][kolumn+1] == Cell.CellState.ALIVE) aliveNeighbors++;
+
+        }
+        System.out.println("DEBUG - rad:"+rad+" kolumn:"+kolumn+" state:"+ this.state[rad][kolumn].getState() +" levande:"+aliveNeighbors);
+         return aliveNeighbors;
     }
 }
