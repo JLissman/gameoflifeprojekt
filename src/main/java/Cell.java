@@ -14,7 +14,9 @@ public class Cell {
         }
     }
 
-
+    public CellState getState(){
+        return state;
+    }
     public enum CellState{
         ALIVE, DEAD
     }

@@ -39,4 +39,12 @@ public class CellTest {
 
     }
 
+    @Test
+    public void returnCellState(){
+        Cell cell = new Cell(Cell.CellState.ALIVE);
+
+        assertEquals(Cell.CellState.ALIVE, cell.getState());
+
+    }
+
 }
