@@ -22,10 +22,14 @@ public class Simulation {
         for (int rad = 0; rad < state.length; rad++) {
             cellStates[rad] = new Cell.CellState[state[rad].length];
             for (int kolumn = 0; kolumn < state[rad].length; kolumn++) {
-                cellStates[rad][kolumn] = state[rad][kolumn].GetState();
+                cellStates[rad][kolumn] = state[rad][kolumn].getState();
                 
             }
         }
         return cellStates;
+    }
+
+    public void update() {
+        state[0][0].setState(state[0][0].getNextState(0));
     }
 }

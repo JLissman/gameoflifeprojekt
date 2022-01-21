@@ -33,7 +33,7 @@ public class CellTest {
 
         Cell cell = new Cell(Cell.CellState.valueOf(initial));
 
-        Cell.CellState actual = cell.GetNextState(neighbors);
+        Cell.CellState actual = cell.getNextState(neighbors);
 
         assertEquals(Cell.CellState.valueOf(expected), actual);
 

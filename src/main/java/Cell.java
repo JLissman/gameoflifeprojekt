@@ -6,9 +6,9 @@ public class Cell {
         this.state = state;
     }
 
-    public CellState GetNextState(int i) {
+    public CellState getNextState(int i) {
         if(state == CellState.ALIVE){
-        return i > 1 && i < 4 ? CellState.ALIVE : CellState.DEAD;}
+            return i > 1 && i < 4 ? CellState.ALIVE : CellState.DEAD;}
         else {
             return i == 3 ? CellState.ALIVE : CellState.DEAD;
         }
@@ -19,5 +19,9 @@ public class Cell {
     }
     public enum CellState{
         ALIVE, DEAD
+    }
+
+    public void setState(CellState state) {
+        this.state = state;
     }
 }
